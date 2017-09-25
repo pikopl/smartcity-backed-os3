@@ -31,3 +31,4 @@ apps/weather/.settings/
 apps/weather/.classpath
 apps/weather/target/
 apps/weather/bin/
+deployments/
