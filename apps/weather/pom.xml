@@ -34,8 +34,8 @@
 	        <version>3.0.2</version>
 	        <executions>
 	          <execution>
-	            <id>copy-installed</id>
-	            <phase>install</phase>
+	            <id>copy</id>
+	            <phase>package</phase>
 	            <goals>
 	              <goal>copy</goal>
 	            </goals>
@@ -46,6 +46,7 @@
 	                  <artifactId>${project.artifactId}</artifactId>
 	                  <version>${project.version}</version>
 	                  <type>${project.packaging}</type>
+	                  <overWrite>true</overWrite>
 	                  <destFileName>${project.artifactId}.war</destFileName>
 	                </artifactItem>
 	              </artifactItems>
