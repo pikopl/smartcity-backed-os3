@@ -29,7 +29,7 @@ public class SchedulerService {
 	
 	protected static final Logger LOGGER = Logger.getLogger(SchedulerService.class);
 	
-	final private static String RESOURCE_URL = "http://www.wroclaw.pl/open-data/opendata/its/parkingi/parkingi.csv";
+	final private static String RESOURCE_URL = "https://www.wroclaw.pl/open-data/datastore/dump/714dbecb-f0d3-4aac-bcfb-b27f1b0e88ea";
 	
 	@Scheduled(cron="0 1-59/5 * * * *")
 	public void importData(){
