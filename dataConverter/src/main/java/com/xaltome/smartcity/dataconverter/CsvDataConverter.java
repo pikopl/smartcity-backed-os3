@@ -33,7 +33,7 @@ public class CsvDataConverter {
 		}
 		List<Map<String, Object>> csvFileData = new LinkedList<Map<String, Object>>();
 		Reader bufferedReader = new StringReader(data);
-		ICsvMapReader mapReader = new CsvMapReader(bufferedReader, CsvPreference.EXCEL_NORTH_EUROPE_PREFERENCE);
+		ICsvMapReader mapReader = new CsvMapReader(bufferedReader, CsvPreference.EXCEL_PREFERENCE);
 		String[] csvHeaders;
 		try {
 			// the header columns are used as the keys to the Map
