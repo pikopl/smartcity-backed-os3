@@ -6,6 +6,11 @@ package com.xaltome.smartcity.weather.dbservice;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -108,20 +113,17 @@ public class WeatherDatabaseService {
 		if (LOGGER.isTraceEnabled()) {
 			LOGGER.tracef("Entering parseTimestamp(): %s", timestampString);
 		}
-		//TODO: move string to property file
-		//Locale.FRENCH solves problem with noon date inserting to the DB as 00.
-	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS",  Locale.FRENCH);
-	    Date parsedDate = null;
+		ZonedDateTime zdt = null;
 	    //TODO: check if timestampString != null
 		try { //TODO: get rid of exception, handle in fillCarkParkLoadTable
 			//TODO: move time zone to weather station table column
-			dateFormat.setTimeZone(TimeZone.getTimeZone("Europe/Warsaw"));
-			parsedDate = dateFormat.parse(timestampString);
-		} catch (ParseException e) {
+			LocalDateTime ldt = LocalDateTime.parse(timestampString, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss[.SSSSSS]"));
+		    zdt = ldt.atZone(ZoneId.of("Europe/Warsaw"));
+		} catch (DateTimeParseException e) {
 			LOGGER.error("Exception in parseTimestamp()", e);
 			throw e;
 		}
-	    Timestamp timestamp = new java.sql.Timestamp(parsedDate.getTime());
+	    Timestamp timestamp = new java.sql.Timestamp(zdt.toInstant().toEpochMilli());
 		if (LOGGER.isTraceEnabled()) {
 			LOGGER.tracef("Leaving parseTimestamp(): %s", timestamp);
 		}
