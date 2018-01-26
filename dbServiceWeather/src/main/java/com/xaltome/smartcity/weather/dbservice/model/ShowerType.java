@@ -24,7 +24,7 @@ public enum ShowerType {
 	 */
 	private ShowerType(int code, String description) {
 		this.code = code;
-		this.descripton = description;
+		this.description = description;
 	}
 
 	public int getCode() {
@@ -46,7 +46,7 @@ public enum ShowerType {
 	
     public static ShowerType convert(String desc){
     	for (ShowerType showerType : values()){
-    		if (showerType.descripton.equals(desc)){
+    		if (showerType.description.equals(desc)){
     			return showerType;
     		}
     	}
