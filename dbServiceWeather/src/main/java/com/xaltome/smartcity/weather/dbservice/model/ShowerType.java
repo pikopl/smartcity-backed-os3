@@ -44,7 +44,7 @@ public enum ShowerType {
     	throw new IllegalArgumentException("No matching constant for " + i);
     }
 	
-    public static ShowerType valueOf(String desc){
+    public static ShowerType convert(String desc){
     	for (ShowerType showerType : values()){
     		if (showerType.descripton.equals(desc)){
     			return showerType;
