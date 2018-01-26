@@ -97,7 +97,7 @@ public class WeatherDatabaseService {
 		weatherData.setHumidity(parseDouble((String) record.get("Wilgotnosc")));
 		weatherData.setAirTemperature(parseDouble((String) record.get("T_Powietrza")));
 		weatherData.setGroundTemperature(parseDouble((String) record.get("T_Grunt")));
-		weatherData.setShowerType(ShowerType.valueOf((String) record.get("Opad_Typ")));
+		weatherData.setShowerType(ShowerType.convert((String) record.get("Opad_Typ")));
 		WeatherStation weatherStation = weatherStationRepo.findByName((String) record.get("Lokalizacja_Opis"));
 		if (weatherStation == null) { // add dynamically new weather station
 			weatherStation = addNewWeatherStation((String) record.get("Lokalizacja_Opis"));
