@@ -13,6 +13,7 @@
 	<modules>
 		<module>carparks</module>
 		<module>weather</module>
+		<module>traffic</module>
 	</modules>
 
 	<build>

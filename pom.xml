@@ -8,6 +8,7 @@
   <modules>
 		<module>dbServiceCarParks</module>
 		<module>dbServiceWeather</module>
+		<module>dbServiceTraffic</module>
 		<module>apps</module>
 		<module>resourceConnector</module>
 		<module>dataConverter</module>
