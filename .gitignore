@@ -10,6 +10,11 @@ dbServiceWeather/.project
 dbServiceWeather/.settings/
 dbServiceWeather/target/
 dbServiceWeather/bin/
+dbServiceTraffic/.classpath
+dbServiceTraffic/.project
+dbServiceTraffic/.settings/
+dbServiceTraffic/target/
+dbServiceTraffic/bin/
 resourceConnector/.classpath
 resourceConnector/.project
 resourceConnector/.settings/
@@ -31,4 +36,9 @@ apps/weather/.settings/
 apps/weather/.classpath
 apps/weather/target/
 apps/weather/bin/
+apps/traffic/.project
+apps/traffic/.settings/
+apps/traffic/.classpath
+apps/traffic/target/
+apps/traffic/bin/
 deployments/
