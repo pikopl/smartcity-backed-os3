@@ -20,13 +20,11 @@
 			<artifactId>dataConverter</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<!--
 		<dependency>
 			<groupId>com.xaltome.smartcity</groupId>
-			<artifactId>dbServiceWeather</artifactId>
+			<artifactId>dbServiceTraffic</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		-->
 	</dependencies>
 	<build>
 	    <plugins>
